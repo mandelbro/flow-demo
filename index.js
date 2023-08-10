@@ -9,15 +9,16 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');
 
 app.get('/', function(request, response) {
-  var env = process.env.APP_ENV;
-  if (env == 'staging') {
+  var appEnv = process.appEnv.APP_ENV;
+  var env = {...process.env, PS1: ""}
+  if (appEnv == 'staging') {
     var envName = 'staging'
   } else if (env == 'production') {
     var envName = 'production'
   } else {
     var envName = 'review app'
   }
-  response.render('index.html', { appEnv: envName, env: JSON.stringify(process.env) });
+  response.render('index.html', { appEnv: envName, env: JSON.stringify(env) });
 });
 
 app.listen(app.get('port'), function() {
