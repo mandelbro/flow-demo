@@ -20,8 +20,7 @@
 		<script>
 			var env = "<%= env %>";
 			var appEnv = "<%= appEnv %>";
-			console.log(env)
-			document.getElementById("env").innerHTML = env;
+			console.log(JSON.parse(env))
 			document.getElementById("appEnv").innerHTML = appEnv;
 		</script>
 	</body>
