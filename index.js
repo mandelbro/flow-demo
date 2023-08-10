@@ -13,7 +13,7 @@ app.get('/', function(request, response) {
   var env = {...process.env, PS1: ""}
   if (appEnv == 'staging') {
     var envName = 'staging'
-  } else if (env == 'production') {
+  } else if (appEnv == 'production') {
     var envName = 'production'
   } else {
     var envName = 'review app'
