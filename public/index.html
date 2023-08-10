@@ -20,7 +20,6 @@
 		<script>
 			var env = "<%= env %>";
 			var appEnv = "<%= appEnv %>";
-			console.log(env);
 			document.getElementById("appEnv").innerHTML = appEnv;
 			console.log(JSON.parse(unescape(env.replace(/&#34;/g, '"'))));
 		</script>
