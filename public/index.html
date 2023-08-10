@@ -10,14 +10,19 @@
 				<h2 class="fw4 green">Montes Made It</h2>
 				<p class="silver ma0">Built with Heroku</p>
 				<div class="pt5">
-					<span id="env" class="white pv1 ph2 br-pill bg-light-blue"></span>
+					<span id="env"></span>
+				</div>
+				<div class="pt5">
+					<span id="appEnv" class="white pv1 ph2 br-pill bg-light-blue"></span>
 				</div>
 			</div>
 		</div>
 		<script>
 			var env = "<%= env %>";
+			var appEnv = "<%= appEnv %>";
 			console.log(env)
 			document.getElementById("env").innerHTML = env;
+			document.getElementById("appEnv").innerHTML = appEnv;
 		</script>
 	</body>
 </html>
