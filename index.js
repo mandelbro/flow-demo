@@ -21,7 +21,6 @@ app.get('/', async function(request, response) {
   var appEnv = process.env.APP_ENV;
   var env = {...process.env, PS1: ""}
   var databaseUrl = process.env.DATABASE_URL
-  let databaseConnection = "Not Connected"
   const pg = client(databaseUrl);
 
   if (appEnv == 'staging') {
@@ -34,16 +33,19 @@ app.get('/', async function(request, response) {
 
   pg.connect()
 
-  await pg.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  console.log("Connecting to database")
+
+  let query = await pg.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
-    databaseConnection = "Connected"
+    console.log("Database connected")
     pg.end();
   });
+  console.log(query)
+  let databaseConnection = query ? "Connected" : "Not Connected";
 
   response.render('index.html', {
     appEnv: envName,
     databaseConnection,
-    databaseUrl,
     env: JSON.stringify(env),
   });
 });

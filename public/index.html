@@ -25,12 +25,11 @@
 		<script>
 			var env = "<%= env %>";
 			var appEnv = "<%= appEnv %>";
-			var databaseConnection = "<%= databaseConnection %>";
+			var databaseConnection = "Database <%= databaseConnection %>";
 			var databaseUrl = "<%= databaseUrl %>";
 
 			document.getElementById("appEnv").innerHTML = appEnv;
 			document.getElementById("databaseConnection").innerHTML = databaseConnection;
-			document.getElementById("databaseUrl").innerHTML = databaseUrl;
 			console.log(JSON.parse(unescape(env.replace(/&#34;/g, '"'))));
 		</script>
 	</body>
