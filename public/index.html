@@ -14,12 +14,23 @@
 				<div class="pt5">
 					<span id="appEnv" class="white pv1 ph2 br-pill bg-light-blue"></span>
 				</div>
+				<div class="pt5">
+					<span id="databaseUrl" class="white pv1 ph2 br-pill bg-light-green"></span>
+				</div>
+				<div class="pt5">
+					<span id="databaseConnection" class="white pv1 ph2 br-pill bg-light-green"></span>
+				</div>
 			</div>
 		</div>
 		<script>
 			var env = "<%= env %>";
 			var appEnv = "<%= appEnv %>";
+			var databaseConnection = "<%= databaseConnection %>";
+			var databaseUrl = "<%= databaseUrl %>";
+
 			document.getElementById("appEnv").innerHTML = appEnv;
+			document.getElementById("databaseConnection").innerHTML = databaseConnection;
+			document.getElementById("databaseUrl").innerHTML = databaseUrl;
 			console.log(JSON.parse(unescape(env.replace(/&#34;/g, '"'))));
 		</script>
 	</body>
