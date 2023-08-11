@@ -17,7 +17,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');
 
-app.get('/', function(request, response) {
+app.get('/', async function(request, response) {
   var appEnv = process.env.APP_ENV;
   var env = {...process.env, PS1: ""}
   var databaseUrl = process.env.DATABASE_URL
@@ -34,7 +34,7 @@ app.get('/', function(request, response) {
 
   pg.connect()
 
-  pg.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  await pg.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
     databaseConnection = "Connected"
     pg.end();
