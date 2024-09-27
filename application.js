@@ -11,7 +11,6 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');
 
 app.get('/', Index);
-app.get('/absolutelabs', Absoultelabs);
 
 app.listen(app.get('port'), function() {
   console.log("Node app running at localhost:" + app.get('port'));
