@@ -2,10 +2,10 @@
   "name": "node-js-sample",
   "version": "0.1.0",
   "description": "A sample Node.js app using Express 4",
-  "main": "index.js",
+  "main": "application.js",
   "scripts": {
-    "start": "node index.js",
-    "start-debug": "node --inspect index.js",
+    "start": "node application.js",
+    "start-debug": "node --inspect application.js",
     "test": "mocha --reporter tap"
   },
   "dependencies": {
