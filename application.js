@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 const Index = require('./lib/routes/index')
-const Absoultelabs = require('./lib/routes/absolutelabs')
 
 require('dotenv').config()
 
